@@ -26,11 +26,14 @@ p{
     font-size: 18px;
 }
 .menu-btn{
-    margin: 25px 5px;
+    margin: 10px 5px;
     padding: 10px 30px;
     border-radius: 25px;
     border: none;
     background-color: white;
+}
+.menu-btn:hover{
+    background-color: rgb(236, 236, 236);
 }
 .menu_grid {
     display: grid;
@@ -53,17 +56,41 @@ p{
 }
 .dish_card img {
     width: 380px;
-    height: 300px;
+    height: 200px;
     object-fit: cover;
 }
 .dish_info {
     padding: 1rem;
+}
+.dish_info span{
+    color: #000;
+}
+.dish_info p{
+    color: gray;
+}
+.dish_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.dish_header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+.price {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 .dish_footer {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
     align-items: center;
+}
+.dish_footer .time{
+    color: gray;
 }
 .dish_footer .status{
     padding: 8px 20px;
