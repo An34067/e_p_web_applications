@@ -1,111 +1,108 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block tab_header %} Les Plaisirs Secrets {% endblock %}</title>
-    <link rel="stylesheet" href="{% static "menu.css" %}"/>
-</head>
-<body>
-    {% include 'navigation.html' %}
-    <section class="menu-section">
-        <div class="menu-content">
-            <h1> Our Menu</h1>
-            <p>Explore our culinary creations crafted with passion and finest ingredients</p>
-            <button class="menu-btn">All</button>
-            <button class="menu-btn">Starters</button>
-            <button class="menu-btn">Mains</button>
-            <button class="menu-btn">Desserts</button>
-            <button class="menu-btn">Drinks</button>
-        </div>
-    </section>
-    <section class="menu_grid">
-        <div class="dish_card">
-            <img src="http://static.photos/food/640x360/20" alt="Starter"/>
-            <div class="dish_info">
-              <div class="dish_header">
-                  <h3>Truffle Arancini</h3>
-                  <span class="price">$14</span>
-              </div>
-              <p>Crispy risotto balls with black truffle and mozzarella center</p>
-              <div class="dish_footer">
-                <span class="time">🕒 15 min</span>
-                <span class="status">Available</span>
-              </div>
-            </div>
-        </div>
-        <div class="dish_card">
-            <img src="http://static.photos/food/640x360/21" alt="Main Course"/>
-            <div class="dish_info">
-              <div class="dish_header">
-                  <h3>Seared Scallops</h3>
-                  <span class="price">$32</span>
-              </div>
-              <p>Perfectly seared scallops with cauliflower purée and pancetta crisp</p>
-              <div class="dish_footer">
-                <span class="time">🕒 20 min</span>
-                <span class="status">Available</span>
-              </div>
-            </div>
-        </div>
-        <div class="dish_card">
-            <img src="http://static.photos/food/640x360/22" alt="Dessert"/>
-            <div class="dish_info">
-              <div class="dish_header">
-                  <h3>Crème Brûlée</h3>
-                  <span class="price">$12</span>
-              </div>
-              <p>Classic vanilla bean custard with caramelized sugar crust</p>
-              <div class="dish_footer">
-                <span class="time">🕒 10 min</span>
-                <span class="status">Available</span>
-              </div>
-            </div>
-        </div>
-        <div class="dish_card">
-            <img src="http://static.photos/food/640x360/23" alt="Starter"/>
-            <div class="dish_info">
-              <div class="dish_header">
-                  <h3>Burrata Salad</h3>
-                  <span class="price">$16</span>
-              </div>
-              <p>Creamy burrata with heirloom tomatoes, basil and balsamic glaze</p>
-              <div class="dish_footer">
-                <span class="time">🕒 10 min</span>
-                <span class="status">Available</span>
-              </div>
-            </div>
-        </div>
-        <div class="dish_card">
-            <img src="http://static.photos/food/640x360/24" alt="Main Course"/>
-            <div class="dish_info">
-              <div class="dish_header">
-                  <h3>Duck Confit</h3>
-                  <span class="price">$38</span>
-              </div>
-              <p>Tender duck leg with cherry reduction, roasted potatoes and seasonal vegetables</p>
-              <div class="dish_footer">
-                <span class="time">🕒 25 min</span>
-                <span class="status">Available</span>
-              </div>
-            </div>
-        </div>
-        <div class="dish_card">
-            <img src="http://static.photos/food/640x360/25" alt="Drink"/>
-            <div class="dish_info">
-              <div class="dish_header">
-                  <h3>Signature Cocktail</h3>
-                  <span class="price">$14</span>
-              </div>
-              <p>Gin, elderflower liqueur, fresh lime juice and cucumber</p>
-              <div class="dish_footer">
-                <span class="time">🕒 5 min</span>
-                <span class="status">Available</span>
-              </div>
-            </div>
-        </div>
-    </section>
-    {% include 'footer.html' %}
-</body>
-</html>
+
+{% block title %}Les Plaisirs Secrets - Menu{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'menu.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="menu-section">
+  <div class="menu-content">
+    <h1> Our Menu</h1>
+    <p>Explore our culinary creations crafted with passion and finest ingredients</p>
+    <button class="menu-btn">All</button>
+    <button class="menu-btn">Starters</button>
+    <button class="menu-btn">Mains</button>
+    <button class="menu-btn">Desserts</button>
+    <button class="menu-btn">Drinks</button>
+  </div>
+</section>
+<section class="menu_grid">
+  <div class="dish_card">
+    <img src="http://static.photos/food/640x360/20" alt="Starter"/>
+    <div class="dish_info">
+      <div class="dish_header">
+          <h3>Truffle Arancini</h3>
+          <span class="price">$14</span>
+      </div>
+      <p>Crispy risotto balls with black truffle and mozzarella center</p>
+      <div class="dish_footer">
+        <span class="time">🕒 15 min</span>
+        <span class="status">Available</span>
+      </div>
+    </div>
+  </div>
+  <div class="dish_card">
+    <img src="http://static.photos/food/640x360/21" alt="Main Course"/>
+    <div class="dish_info">
+      <div class="dish_header">
+          <h3>Seared Scallops</h3>
+          <span class="price">$32</span>
+      </div>
+      <p>Perfectly seared scallops with cauliflower purée and pancetta crisp</p>
+      <div class="dish_footer">
+        <span class="time">🕒 20 min</span>
+        <span class="status">Available</span>
+      </div>
+    </div>
+  </div>
+  <div class="dish_card">
+    <img src="http://static.photos/food/640x360/22" alt="Dessert"/>
+    <div class="dish_info">
+      <div class="dish_header">
+          <h3>Crème Brûlée</h3>
+          <span class="price">$12</span>
+      </div>
+      <p>Classic vanilla bean custard with caramelized sugar crust</p>
+      <div class="dish_footer">
+        <span class="time">🕒 10 min</span>
+        <span class="status">Available</span>
+      </div>
+    </div>
+  </div>
+  <div class="dish_card">
+    <img src="http://static.photos/food/640x360/23" alt="Starter"/>
+    <div class="dish_info">
+      <div class="dish_header">
+          <h3>Burrata Salad</h3>
+          <span class="price">$16</span>
+      </div>
+      <p>Creamy burrata with heirloom tomatoes, basil and balsamic glaze</p>
+      <div class="dish_footer">
+        <span class="time">🕒 10 min</span>
+        <span class="status">Available</span>
+      </div>
+    </div>
+  </div>
+  <div class="dish_card">
+    <img src="http://static.photos/food/640x360/24" alt="Main Course"/>
+    <div class="dish_info">
+      <div class="dish_header">
+          <h3>Duck Confit</h3>
+          <span class="price">$38</span>
+      </div>
+      <p>Tender duck leg with cherry reduction, roasted potatoes and seasonal vegetables</p>
+      <div class="dish_footer">
+        <span class="time">🕒 25 min</span>
+        <span class="status">Available</span>
+      </div>
+    </div>
+  </div>
+  <div class="dish_card">
+    <img src="http://static.photos/food/640x360/25" alt="Drink"/>
+    <div class="dish_info">
+      <div class="dish_header">
+          <h3>Signature Cocktail</h3>
+          <span class="price">$14</span>
+      </div>
+      <p>Gin, elderflower liqueur, fresh lime juice and cucumber</p>
+      <div class="dish_footer">
+        <span class="time">🕒 5 min</span>
+        <span class="status">Available</span>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

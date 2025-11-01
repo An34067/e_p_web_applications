@@ -1,115 +1,103 @@
+{% extends 'base.html' %} 
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{% block tab_header %} Les Plaisirs Secrets {% endblock %}</title>
-    <link rel="stylesheet" href="{% static "style.css" %}"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  </head>
-
-  <body>
-    {% include 'navigation.html' %}
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-title">Les Plaisirs Secrets</h1>
-        <h3 class="hero-subtitles">
-          Experience culinary excellence in an elegant atmosphere
-        </h3>
-      </div>
-    </section>
-    <section class="history-section">
-      <div class="history-content">
-        <div class="history-left">
-          <h1 class="history-title">Our Story</h1>
-          <h2 class="history-subtitles">
-            Founded in 2010, Les Plaisirs Secrets has been serving exquisite
-            dishes crafted with<br />
-            locally-sourced ingredients and passion. Our chef brings 20 years of
-            international<br />
-            culinary experience to create unforgettable dining experiences.
-          </h2>
-          <div class="info-section">
-            <div class="hours">
-              <span class="icon">🕒</span><br/><br/>
-              <strong>Open Hours</strong><br/>
-              Mon-Fri: 11am - 11pm<br/>
-              Weekend: 10am - 12am
-            </div>
-            <div class="location">
-              <span class="icon">📍</span><br/><br/>
-              <strong>Location</strong><br/>
-              123 Gourment Street<br/>
-              Foodville, 10001
-            </div>
-          </div>
+{% block title %}Les Plaisirs Secrets - Home{% endblock %}
+{% block content %}
+<section class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title">Les Plaisirs Secrets</h1>
+    <h3 class="hero-subtitles">Experience culinary excellence in an elegant atmosphere
+    </h3>
+  </div>
+</section>
+<section class="history-section">
+  <div class="history-content">
+    <div class="history-left">
+      <h1 class="history-title">Our Story</h1>
+      <h2 class="history-subtitles">
+        Founded in 2010, Les Plaisirs Secrets has been serving exquisite dishes
+        crafted with<br/>
+        locally-sourced ingredients and passion. Our chef brings 20 years of
+        international<br/>
+        culinary experience to create unforgettable dining experiences.
+      </h2>
+      <div class="info-section">
+        <div class="hours">
+          <span class="icon">🕒</span><br/><br/>
+          <strong>Open Hours</strong><br/>
+          Mon-Fri: 11am - 11pm<br/>
+          Weekend: 10am - 12am
         </div>
-        <div class="history-right">
-          <div class="gallery-grid">
-            <div class="gallery-row">
-              <img src="http://static.photos/food/640x360/1" alt="Restaurant Interior" class="gallery"/>
-              <img src="http://static.photos/food/640x360/2" alt="Chef Cooking" class="gallery"/>
-            </div>
-            <div class="gallery-row">
-              <img src="http://static.photos/food/640x360/3" alt="Dining Area" class="gallery"/>
-              <img src="http://static.photos/food/640x360/4" alt="Wine Selection" class="gallery"/>
-            </div>
-          </div>
+        <div class="location">
+          <span class="icon">📍</span><br/><br/>
+          <strong>Location</strong><br/>
+          123 Gourment Street<br/>
+          Foodville, 10001
         </div>
       </div>
-    </section>
-    <section class="featured-section">
-      <div class="f-content">
-        <h2 class="f-title">Signature Dishes</h2>
-        <p class="f-subtitle">Our chef's selection of most beloved dishes</p>
-        <section class="dishes-grid">
-          <div class="dish-card">
-            <img src="http://static.photos/food/640x360/10" alt="Signature Dish 1"/>
-            <div class="dish-info">
-              <h3>Truffle Infused Pasta</h3>
-              <p>Handmade pasta with black truffle and parmesan cream sauce</p>
-              <div class="dish-footer">
-                <span>$28</span>
-                <span>Available</span>
-              </div>
-            </div>
+    </div>
+    <div class="history-right">
+      <div class="gallery-grid">
+        <div class="gallery-row">
+          <img src="http://static.photos/food/640x360/1" alt="Restaurant Interior" class="gallery"/>
+          <img src="http://static.photos/food/640x360/2" alt="Chef Cooking" class="gallery"/>
+        </div>
+        <div class="gallery-row">
+          <img src="http://static.photos/food/640x360/3" alt="Dining Area" class="gallery"/>
+          <img src="http://static.photos/food/640x360/4" alt="Wine Selection" class="gallery"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="featured-section">
+  <div class="f-content">
+    <h2 class="f-title">Signature Dishes</h2>
+    <p class="f-subtitle">Our chef's selection of most beloved dishes</p>
+    <section class="dishes-grid">
+      <div class="dish-card">
+        <img src="http://static.photos/food/640x360/10" alt="Signature Dish 1"/>
+        <div class="dish-info">
+          <h3>Truffle Infused Pasta</h3>
+          <p>Handmade pasta with black truffle and parmesan cream sauce</p>
+          <div class="dish-footer">
+            <span>$28</span>
+            <span>Available</span>
           </div>
-          <div class="dish-card">
-            <img src="http://static.photos/food/640x360/11" alt="Signature Dish 2"/>
-            <div class="dish-info">
-              <h3>Wagyu Beef Steak</h3>
-              <p>
-                Premium A5 wagyu with roasted vegetables and red wine reduction
-              </p>
-              <div class="dish-footer">
-                <span>$65</span>
-                <span>Available</span>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <img src="http://static.photos/food/640x360/11" alt="Signature Dish 2"/>
+        <div class="dish-info">
+          <h3>Wagyu Beef Steak</h3>
+          <p>Premium A5 wagyu with roasted vegetables and red wine reduction</p>
+          <div class="dish-footer">
+            <span>$65</span>
+            <span>Available</span>
           </div>
-          <div class="dish-card">
-            <img src="http://static.photos/food/640x360/12" alt="Signature Dish 3"/>
-            <div class="dish-info">
-              <h3>Chocolate Soufflé</h3>
-              <p>Warm chocolate soufflé with vanilla bean ice cream</p>
-              <div class="dish-footer">
-                <span>$14</span>
-                <span>Available</span>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <img src="http://static.photos/food/640x360/12" alt="Signature Dish 3"/>
+        <div class="dish-info">
+          <h3>Chocolate Soufflé</h3>
+          <p>Warm chocolate soufflé with vanilla bean ice cream</p>
+          <div class="dish-footer">
+            <span>$14</span>
+            <span>Available</span>
           </div>
-        </section>
-        <div class="button-container">
-          <button class="btn">View more menu</button>
         </div>
       </div>
     </section>
-    <section class="review-section">
-      <div class="r-content">
-        <h2 class="r-title">What Our Guests Say</h2>
-        <p class="r-subtitle">Hear from our satisfied customers about their experiences</p>
-        <section class="review-grid">
+    <div class="button-container">
+      <button class="btn">View more menu</button>
+    </div>
+  </div>
+</section>
+<section class="review-section">
+  <div class="r-content">
+    <h2 class="r-title">What Our Guests Say</h2>
+    <p class="r-subtitle">Hear from our satisfied customers about their experiences</p>
+    <section class="review-grid">
       <div class="review-card">
         <div class="review-info">
           <div class="stars">
@@ -178,11 +166,9 @@
       <div class="reserve-content">
         <h2 class="reserve-title">Ready for an Unforgettable Dining Experience?</h2>
         <p class="reserve-text">Book your table now and let us take care of the rest</p>
-        <button class="reserve-btn">
-          Reserve Your Table
-        </button>
+        <button class="reserve-btn">Reserve Your Table</button>
       </div>
     </section>
-    {% include 'footer.html' %}
-  </body>
-</html>
+    {% endblock %}
+  </div>
+</section>
