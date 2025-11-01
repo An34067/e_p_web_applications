@@ -397,8 +397,8 @@ h1 {
 }
 
 .footer-section {
+    width: 100vw;
     background-color: #1a202c;
-    width: 100%;
 }
 .footer-content {
     display: grid;

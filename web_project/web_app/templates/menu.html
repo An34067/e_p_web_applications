@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block tab_header %} Les Plaisirs Secrets {% endblock %}</title>
+    <link rel="stylesheet" href="{% static "menu.css" %}"/>
+</head>
+<body>
+    {% include 'navigation.html' %}
+    <section class="menu-section">
+        <div class="menu-content">
+            <h1> Our Menu</h1>
+            <p>Explore our culinary creations crafted with passion and finest ingredients</p>
+            <button class="menu-btn">All</button>
+            <button class="menu-btn">Starters</button>
+            <button class="menu-btn">Mains</button>
+            <button class="menu-btn">Desserts</button>
+            <button class="menu-btn">Drinks</button>
+        </div>
+    </section>
+    <section class="menu_grid">
+        <div class="dish_card">
+            <img src="http://static.photos/food/640x360/20" alt="Starter"/>
+            <div class="dish_info">
+              <h3>Truffle Arancini</h3>
+              <span>$14</span>
+              <p>Crispy risotto balls with black truffle and mozzarella center</p>
+              <div class="dish_footer">
+                <span>🕒 15 min</span>
+                <span class="status">Available</span>
+              </div>
+            </div>
+        </div>
+        <div class="dish_card">
+            <img src="http://static.photos/food/640x360/11" alt="Signature Dish 2"/>
+            <div class="dish_info">
+              <h3>Wagyu Beef Steak</h3>
+              <p>
+                Premium A5 wagyu with roasted vegetables and red wine reduction
+              </p>
+              <div class="dish_footer">
+                <span>$65</span>
+                <span>Available</span>
+              </div>
+            </div>
+        </div>
+        <div class="dish_card">
+            <img src="http://static.photos/food/640x360/12" alt="Signature Dish 3"/>
+            <div class="dish_info">
+              <h3>Chocolate Soufflé</h3>
+              <p>Warm chocolate soufflé with vanilla bean ice cream</p>
+              <div class="dish_footer">
+                <span>$14</span>
+                <span>Available</span>
+              </div>
+            </div>
+        </div>
+        <div class="dish_card">
+            <img src="http://static.photos/food/640x360/10" alt="Signature Dish 1"/>
+            <div class="dish_info">
+              <h3>Truffle Infused Pasta</h3>
+              <p>Handmade pasta with black truffle and parmesan cream sauce</p>
+              <div class="dish_footer">
+                <span>$28</span>
+                <span>Available</span>
+              </div>
+            </div>
+        </div>
+        <div class="dish_card">
+            <img src="http://static.photos/food/640x360/11" alt="Signature Dish 2"/>
+            <div class="dish_info">
+              <h3>Wagyu Beef Steak</h3>
+              <p>
+                Premium A5 wagyu with roasted vegetables and red wine reduction
+              </p>
+              <div class="dish_footer">
+                <span>$65</span>
+                <span>Available</span>
+              </div>
+            </div>
+        </div>
+        <div class="dish_card">
+            <img src="http://static.photos/food/640x360/12" alt="Signature Dish 3"/>
+            <div class="dish_info">
+              <h3>Chocolate Soufflé</h3>
+              <p>Warm chocolate soufflé with vanilla bean ice cream</p>
+              <div class="dish_footer">
+                <span>$14</span>
+                <span>Available</span>
+              </div>
+            </div>
+        </div>
+    </section>
+    {% include 'footer.html' %}
+</body>
+</html>
