@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Les Plaisirs Secrets - Menu{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'reservation.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="reservation-section">
+    <div class="reservation-content">
+        <h1>Table Reservation</h1>
+        <p>Book your table online for a seamless dining experience</p>
+    </div>
+</section>
+<section class="reservation-grid">
+    <div class="reservation-card">
+        <h2>Reservation Details</h2>
+        <label for="name">Full Name:</label>
+        <input type="text" placeholder="Enter your name">
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Enter your email">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" placeholder="Enter your phone number">
+        <label for="guests">Number of Guests:</label>
+        <select name="guests">
+            <option>1 person</option>
+            <option>2 people</option>
+            <option selected>3 people</option>
+            <option>4 people</option>
+            <option>5 people</option>
+            <option>6 people</option>
+            <option>7+ people</option>
+        </select>
+        <label for="date">Date:</label>
+        <input type="date">
+        <label for="time">Time:</label>
+        <select name="time">
+            <option>11:00 AM</option>
+            <option>11:30 AM</option>
+            <option>12:00 PM</option>
+            <option>12:30 PM</option>
+            <option>1:00 PM</option>
+            <option>1:30 PM</option>
+            <option>2:00 PM</option>
+            <option>5:00 PM</option>
+            <option>5:30 PM</option>
+            <option>6:00 PM</option>
+            <option>6:30 PM</option>
+            <option>7:00 PM</option>
+            <option>7:30 PM</option>
+            <option>8:00 PM</option>
+            <option>8:30 PM</option>
+            <option>9:00 PM</option>
+            <option>9:30 PM</option>
+            <option>10:00 PM</option>
+        </select>
+        <label for="special-requests">Special Requests</label>
+        <textarea name="special-requests"></textarea>
+        <button type="submit">Confirm Reservation</button>
+    </div>
+    <div class="reservation-card">
+        <p>text</p>
+    </div>
+</section>
+
+
+{% endblock %}

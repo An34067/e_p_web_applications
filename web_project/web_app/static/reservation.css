@@ -1,0 +1,35 @@
+.reservation-section{
+    width: 100vw;
+    background-color: rgb(241, 241, 241);
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+.reservation-content{
+    padding-top: 5rem;
+    position: relative;
+    text-align: center;
+}
+.reservation-content h1{
+    color: #000;
+    font-size: 40px;
+}
+p{
+    color: #000;
+    font-size: 18px;
+}
+.reservation-grid{
+    display: grid;
+    grid-template-columns: 400px 400px;
+    margin-bottom: 3rem;
+    width: 100vw;
+    gap: 2rem;
+    justify-content: center;
+}
+.reservation-card{
+    width: 400px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
