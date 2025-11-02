@@ -58,6 +58,26 @@ h1 {
     color: #000;
     text-decoration: none;
 }
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.signin-btn {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Georgia;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.signin-btn:hover {
+    background-color: #333;
+    color: white;
+}
 .img {
     width: 500px;
 }
@@ -86,26 +106,7 @@ h1 {
     text-align: center;
     color: white;
 }
-.hero-btn{
-    width: 160px;
-    height: 50px;
-    color: rgb(200, 100, 18);
-    background-color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-.hero-btn:hover {
-    background-color:rgb(200, 100, 18);
-    color: white;
-}
+
 .hero-title {
     font-size: 5rem;
     font-weight: bold;
@@ -118,18 +119,19 @@ h1 {
     text-align: center;
 }
 .book-btn:hover {
-    background-color: rgb(200, 100, 18);
+    background-color: #333;
+    color: white;
 }
 .book-btn {
-    background-color: rgb(212, 144, 18);
-    color: white;
-    border: none;
-    padding: 10px 20px;
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #333;
+    padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
     font-family: Georgia;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 .history-content {
     display: flex;

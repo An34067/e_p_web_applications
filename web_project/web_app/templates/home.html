@@ -6,9 +6,6 @@
   <div class="hero-content">
     <h1 class="hero-title">Les Plaisirs Secrets</h1>
     <h3 class="hero-subtitles">Experience culinary excellence in an elegant atmosphere</h3>
-    <div class="button-container">
-      <a href="{% url 'menu' %}" class="hero-btn">View Menu</a>
-    </div>
   </div>
 </section>
 <section class="history-section">
@@ -169,7 +166,7 @@
       <div class="reserve-content">
         <h2 class="reserve-title">Ready for an Unforgettable Dining Experience?</h2>
         <p class="reserve-text">Book your table now and let us take care of the rest</p>
-        <button class="reserve-btn">Reserve Your Table</button>
+        <a href="{% url 'reservation' %}"><button class="reserve-btn">Reserve Your Table</button></a>
       </div>
     </section>
     {% endblock %}
