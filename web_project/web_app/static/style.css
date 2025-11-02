@@ -299,7 +299,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 3rem;
+    padding-bottom: 3rem 0;
+    width: 100vw;
 }
 .r-content {
     position: relative;
