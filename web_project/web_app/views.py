@@ -11,5 +11,5 @@ def menu(request):
 def reservation(request):
     return render(request, 'reservation.html')
 
-def account(request):
-    return render(request, 'home.html')
+def signin(request):
+    return render(request, 'signin.html')
