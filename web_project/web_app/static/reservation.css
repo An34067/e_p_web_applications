@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
 }
 .reservation-content{
     padding-top: 5rem;
@@ -25,11 +25,102 @@ p{
     grid-template-columns: 400px 400px;
     margin-bottom: 3rem;
     width: 100vw;
-    gap: 2rem;
+    height: 400px auto;
+    gap: 4rem;
     justify-content: center;
+    align-items: start;
 }
-.reservation-card{
+.reservation-card1{
     width: 400px;
     border-radius: 8px;
-    border: 1px solid black;
+    padding: 1.5rem;
+    display: block;
+    height: auto;
+    background-color: white;
+    box-shadow: 5px 6px 6px rgba(0, 0, 0, 0.1);
+}
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem 2rem;
+    justify-content: center;
+    width: 100%; 
+}
+.grid-col1, .grid-col2{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.grid-col1 label, .grid-col2 label {
+    margin-bottom: 0.25rem; 
+}
+
+.grid-col1 input, .grid-col1 select,
+.grid-col2 input, .grid-col2 select {
+    width: 100%;
+    height: 40px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.grid-col1 > div,
+.grid-col2 > div{
+    padding-bottom: 1rem;
+}
+.textarea-container {
+
+    grid-column: 1 / -1;
+    width: 100%; 
+}
+textarea {
+    width: 100%;
+    height: 90px;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.form-btn{
+    width: 200px;
+    height: 45px;
+    color: white;
+    background-color: rgb(99, 46, 3);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    align-self: flex-start;
+}
+.reservation-card2{
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: block;
+    background-color: white;
+    box-shadow: 5px 6px 6px rgba(0, 0, 0, 0.1);
+}
+.reservation-card2 h2 {
+    text-align: left;
+    /* margin-bottom: 1.5rem; */
+}
+.reservation-card2 p {
+    text-align: left;
+    color: gray;
+}
+.reservation-card2 img {
+    width: 100%; 
+    height: 200px;
+    object-fit: cover; 
+    border-radius: 4px; 
+    margin-bottom: 1rem; 
 }

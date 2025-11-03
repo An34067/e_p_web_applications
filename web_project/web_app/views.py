@@ -9,7 +9,7 @@ def menu(request):
     return render(request, 'menu.html')
 
 def reservation(request):
-    return render(request, 'home.html')
+    return render(request, 'reservation.html')
 
 def account(request):
     return render(request, 'home.html')

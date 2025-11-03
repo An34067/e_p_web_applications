@@ -15,55 +15,70 @@
     </div>
 </section>
 <section class="reservation-grid">
-    <div class="reservation-card">
+    <div class="reservation-card1">
         <h2>Reservation Details</h2>
-        <label for="name">Full Name:</label>
-        <input type="text" placeholder="Enter your name">
-        <label for="email">Email:</label>
-        <input type="email" placeholder="Enter your email">
-        <label for="phone">Phone Number:</label>
-        <input type="tel" placeholder="Enter your phone number">
-        <label for="guests">Number of Guests:</label>
-        <select name="guests">
-            <option>1 person</option>
-            <option>2 people</option>
-            <option selected>3 people</option>
-            <option>4 people</option>
-            <option>5 people</option>
-            <option>6 people</option>
-            <option>7+ people</option>
-        </select>
-        <label for="date">Date:</label>
-        <input type="date">
-        <label for="time">Time:</label>
-        <select name="time">
-            <option>11:00 AM</option>
-            <option>11:30 AM</option>
-            <option>12:00 PM</option>
-            <option>12:30 PM</option>
-            <option>1:00 PM</option>
-            <option>1:30 PM</option>
-            <option>2:00 PM</option>
-            <option>5:00 PM</option>
-            <option>5:30 PM</option>
-            <option>6:00 PM</option>
-            <option>6:30 PM</option>
-            <option>7:00 PM</option>
-            <option>7:30 PM</option>
-            <option>8:00 PM</option>
-            <option>8:30 PM</option>
-            <option>9:00 PM</option>
-            <option>9:30 PM</option>
-            <option>10:00 PM</option>
-        </select>
-        <label for="special-requests">Special Requests</label>
-        <textarea name="special-requests"></textarea>
-        <button type="submit">Confirm Reservation</button>
+        <form>
+            <div class="grid-col1">
+                <div class="name">
+                    <label for="name">Full Name:</label>
+                    <input type="text" placeholder="Name...">
+                </div>
+                <div class="phone">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" placeholder="Phone...">
+                </div>
+                <div class="date">
+                    <label for="date">Date:</label>
+                    <input type="date">
+                </div>
+            </div>
+            <div class="grid-col2">
+                <div class="email">
+                    <label for="email">Email:</label>
+                    <input type="email" placeholder="Email...">
+                </div>
+                <div class="guests">
+                    <label for="guests">Number of Guests:</label>
+                    <select name="guests">
+                        <option>1 person</option>
+                        <option>2 people</option>
+                        <option selected>3 people</option>
+                        <option>4 people</option>
+                        <option>5 people</option>
+                        <option>6 people</option>
+                        <option>7+ people</option>
+                    </select>
+                </div>
+                <div class="time">
+                    <label for="time">Time:</label>
+                    <input type="time" id="meetingTime" name="meeting-time">
+                </div>
+            </div>
+            <div class="textarea-container">
+                <label for="special-requests">Special Requests</label>
+                <textarea name="special-requests"></textarea>
+            </div>
+        </form>
+        <button class="form-btn">Confirm Reservation</button>
     </div>
-    <div class="reservation-card">
-        <p>text</p>
+    <div class="reservation-card2">
+        <h2>Our Dining Spaces</h2>
+        <div>
+            <img src="{% static 'images/Main Dining Room.jpg' %}" alt="Main Dining Room"/>
+            <h3>Main Dining Room</h3>
+            <p>Elegant and sophisticated atmosphere perfect for any occasion. Features comfortable seating and beautiful lighting.</p>
+        </div>
+        <div>
+            <img src="{% static 'images/Private Dining.jpg' %}" alt="Private Dining"/>
+            <h3>Private Dining</h3>
+            <p>Intimate space for special celebrations or business meetings. Accommodates up to 12 guests.</p>
+        </div>
+        <div>
+            <img src="{% static 'images/Outdoor Patio.jpg' %}" alt="Outdoor Patio"/>
+            <h3>Outdoor Patio</h3>
+            <p>Beautifully landscaped patio with heaters for year-round enjoyment. Perfect for al fresco dining.</p>
+        </div>
     </div>
 </section>
-
 
 {% endblock %}
