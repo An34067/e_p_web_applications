@@ -88,7 +88,7 @@ textarea {
     width: 200px;
     height: 45px;
     color: white;
-    background-color: rgb(99, 46, 3);
+    background-color: rgb(200, 100, 18);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -97,7 +97,6 @@ textarea {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1rem;
     align-self: flex-start;
 }
 .reservation-card2{
