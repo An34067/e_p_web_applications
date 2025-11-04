@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Les Plaisirs Secrets - Profile{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="profile-section">
+    <div class="profile-list-left">
+        <div class="my-profile">
+            <div>
+              <img src="{% static 'images/profile-img.jpg' %}" alt="profile-img"/>
+            </div>
+            <div class="second-column">
+              <h2 class="name">John Doe</h2>
+              <p class="status">Gold Member</p>
+            </div>
+        </div>
+        <div class="nav">
+            <ul class="nav-menu">
+                <li class="nav-items">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </li>
+                <li class="nav-items">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Reservations</span>
+                </li>
+                <li class="nav-items">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Orders</span>
+                </li>
+                <li class="nav-items">
+                    <i class="fas fa-heart"></i>
+                    <span>Favorites</span>
+                </li>
+                <li class="nav-items">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="profile-list-right">
+        <h2>Profile Information</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">First Name:</label>
+                <input type="text" placeholder="Your name...">
+                <label for="last-name">Last Name:</label>
+                <input type="text" placeholder="Your last name...">
+            </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

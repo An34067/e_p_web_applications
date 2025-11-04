@@ -71,11 +71,12 @@
     background-color: rgb(212, 144, 18);
     color: white;
     border: none;
-    padding: 1rem;
+    padding: 1rem 2rem;
     border-radius: 4px;
     font-size: 1.1rem;
     cursor: pointer;
     margin-top: 1rem;
+    width: 100%; 
 }
 .signin-submit-btn:hover {
     background-color: rgb(200, 100, 18);

@@ -27,7 +27,9 @@
                 </label>
                 <a href="#" class="forgot-password">Forgot password?</a>
             </div>
-            <button type="submit" class="signin-submit-btn">Sign In</button>
+            <a href="{% url 'profile' %}">
+                <button type="button" class="signin-submit-btn">Sign In</button>
+            </a>
         </form>
         <div class="signup-link">
             <p>Don't have an account? <a href="{% url 'signup' %}">Create new</a></p>

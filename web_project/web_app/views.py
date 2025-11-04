@@ -16,3 +16,6 @@ def signin(request):
 
 def signup(request):
     return render(request, 'signup.html')
+
+def profile(request):
+    return render(request, 'profile.html')

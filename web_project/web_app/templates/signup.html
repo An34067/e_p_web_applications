@@ -1,12 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block title %}Les Plaisirs Secrets - SigniIn{% endblock %}
-
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'signup.css' %}">
 {% endblock %}
-
 {% block content %}
 <section class="signup-section">
     <div class="signup-content">
@@ -42,7 +39,9 @@
                     <input type="checkbox">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
                 </label>
             </div>
-            <button type="submit" class="signup-submit-btn">Create account</button>
+            <a href="{% url 'profile' %}">
+                <button type="button" class="signup-submit-btn">Create account</button>
+            </a>
         </form>
         <div class="signin-link">
             <p>Already have an account? <a href="{% url 'signin' %}">Sign In</a></p>
