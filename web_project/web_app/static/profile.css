@@ -85,19 +85,67 @@
 .nav-items:hover i {
     color: #000;
 }
-.form-group{
+ form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem 2rem;
+    justify-content: center;
+    width: 100%; 
+}
+.list-col1, .list-col2{
+    width: 100%;
+    height: auto;
     display: flex;
-    flex-direction: row;
-    gap: 2rem;
+    flex-direction: column;
 }
-.form-group label{
-    margin-bottom: 2rem; 
+.list-col1 label, .list-col2 label, .list-info label {
+    margin-bottom: 0.25rem; 
 }
-.form-group input{
-    width: 200px;
+.list-col1 input, .list-col1 select,
+.list-col2 input, .list-col2 select {
+    width: 100%;
     height: 40px;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+.list-col1 > div,
+.list-col2 > div{
+    padding-bottom: 1rem;
+}
+.list-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1rem 2rem;
+    justify-content: center;
+    width: 100%; 
+}
+.info-c1{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.info-c1 label {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+.info-c1 input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.info-c2{
+    width: auto auto auto;
+    height: auto;
+}
+.info-c2 input{
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 170px;
 }
