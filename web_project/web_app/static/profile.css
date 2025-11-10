@@ -149,3 +149,12 @@
     border-radius: 5px;
     width: 170px;
 }
+.select-sction{
+    display: flex;
+    gap: 0.2rem;
+}
+.profile-btns{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: right;
+}
