@@ -1,6 +1,10 @@
 .profile-section{
     display: grid;
+    grid-template-areas: 
+        "left right"
+        ". membership";
     grid-template-columns: 260px 600px;
+    grid-template-rows: auto auto;
     margin-bottom: 3rem;
     width: 100vw;
     height: 400px auto;
@@ -140,21 +144,68 @@
     font-size: 1rem;
 }
 .info-c2{
-    width: auto auto auto;
+    width: 100%;
     height: auto;
+    display: flex;
+    gap: 0.5rem;
 }
 .info-c2 input{
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: 170px;
+    width: 100%;
+    flex: 1; 
 }
 .select-sction{
     display: flex;
     gap: 0.2rem;
 }
-.profile-btns{
+.save{
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color:  rgb(184, 111, 29);
+    margin-top: 2rem;
+    font-size: 14px;
+    cursor: pointer;
+}
+.cancel{
+    padding: 10px 30px;
+    border-radius: 8px;
+    color: #000;
+    margin-top: 2rem;
+    font-size: 14px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.save:hover{
+    background-color: white;
+    color:  rgb(184, 111, 29);
+    border: 1px solid black;
+}
+.cancel:hover{
+    background-color: #000;
+    color: white;
+}
+.btnf{
     display: flex;
-    gap: 1.5rem;
     justify-content: right;
+}
+.membership-card {
+    grid-area: membership;
+    background-color: rgb(173, 106, 17);
+    width: 600px;
+    color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: block;
+    height: auto;
+    gap: 5rem;
+    box-shadow: 5px 6px 6px rgba(0, 0, 0, 0.1);
+}
+.minfo{
+    display: flex;
+    gap: 12rem;
+    padding-bottom: 1rem;
 }
