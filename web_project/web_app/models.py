@@ -3,33 +3,33 @@ from django.db import models
 # Create your models here.
 
 class Employees(models.Model):
-    name = models.CharField(verbose_name='Имя сотрудника', max_length=30)
-    surname = models.CharField('Фамилия сотрудника', max_length=30)
-    position = models.CharField('Должность', max_length=30)
-    salary = models.DecimalField('Зарплата', max_digits=10, decimal_places=2)
-    phone = models.CharField('Номер телефона', max_length=20)
-    email = models.EmailField('Mail', max_length=50)
-    hire_date = models.DateField('Дата приема')
+    name = models.CharField(verbose_name='Employee name', max_length=30)
+    surname = models.CharField('Employee surname', max_length=30)
+    position = models.CharField('Position', max_length=30)
+    salary = models.DecimalField('Salary', max_digits=10, decimal_places=2)
+    phone = models.CharField('Phone number', max_length=20)
+    email = models.EmailField('Email', max_length=50)
+    hire_date = models.DateField('Hire date')
 
     class Meta:
-        verbose_name = 'Сотрудник'
-        verbose_name_plural = 'Сотрудники'
+        verbose_name = 'Employee'
+        verbose_name_plural = 'Employees'
         ordering = ['surname', 'name']
 
     def __str__(self):
         return f"{self.surname}"
     
 class Menu(models.Model):
-    dish_name = models.CharField('Название блюда', max_length=100)
-    category = models.CharField('Категория', max_length=20)
-    price = models.DecimalField('Цена', max_digits=8, decimal_places=2)
-    description = models.TextField('Описание')
-    cooking_time = models.IntegerField('Время приготовления (мин)', default=15)
-    is_available = models.BooleanField('Доступно', default=True)
+    dish_name = models.CharField('Dish name', max_length=100)
+    category = models.CharField('Category', max_length=20)
+    price = models.DecimalField('Price', max_digits=8, decimal_places=2)
+    description = models.TextField('Description')
+    cooking_time = models.IntegerField('Cooking time (min)', default=15)
+    is_available = models.BooleanField('Available', default=True)
     
     class Meta:
-        verbose_name = 'Блюдо'
-        verbose_name_plural = 'Меню'
+        verbose_name = 'Dish'
+        verbose_name_plural = 'Menu'
         ordering = ['category', 'dish_name']
     
     def str(self):
@@ -38,36 +38,36 @@ class Menu(models.Model):
 
 class Tables(models.Model):
     STATUS_CHOICES = [
-        ('free', 'Свободен'),
-        ('occupied', 'Занят'),
-        ('reserved', 'Забронирован'),
-        ('maintenance', 'На обслуживании'),
+        ('free', 'Free'),
+        ('occupied', 'Occupied'),
+        ('reserved', 'Reserved'),
+        ('maintenance', 'Maintenance'),
     ]
     
-    table_number = models.IntegerField('Номер столика', unique=True)
-    capacity = models.IntegerField('Вместимость')
-    status = models.CharField('Статус', max_length=15, default='free')
-    location = models.CharField('Расположение', max_length=100)
+    table_number = models.IntegerField('Table number', unique=True)
+    capacity = models.IntegerField('Capacity')
+    status = models.CharField('Status', max_length=15, default='free')
+    location = models.CharField('Location', max_length=100)
     
     class Meta:
-        verbose_name = 'Столик'
-        verbose_name_plural = 'Столики'
+        verbose_name = 'Table'
+        verbose_name_plural = 'Tables'
         ordering = ['table_number']
     
     def str(self):
-        return f"Столик #{self.table_number}"
+        return f"Table #{self.table_number}"
 
 class Customers(models.Model):
-    phone = models.CharField('Телефон', max_length=20, unique=True)
-    full_name = models.CharField('ФИО', max_length=100)
+    phone = models.CharField('Phone', max_length=20, unique=True)
+    full_name = models.CharField('Full name', max_length=100)
     email = models.EmailField('Email', unique=True)
-    total_orders = models.IntegerField('Всего заказов', default=0)
-    total_spent = models.DecimalField('Всего потрачено', max_digits=12, decimal_places=2)
-    created_at = models.DateTimeField('Дата регистрации', auto_now_add=True)
+    total_orders = models.IntegerField('Total orders', default=0)
+    total_spent = models.DecimalField('Total spent', max_digits=12, decimal_places=2)
+    created_at = models.DateTimeField('Registration date', auto_now_add=True)
     
     class Meta:
-        verbose_name = 'Клиент'
-        verbose_name_plural = 'Клиенты'
+        verbose_name = 'Customer'
+        verbose_name_plural = 'Customers'
         ordering = ['-created_at']
     
     def str(self):
@@ -75,67 +75,67 @@ class Customers(models.Model):
 
 class Orders(models.Model):
     STATUS_CHOICES = [
-        ('pending', 'Принят'),
-        ('preparing', 'Готовится'),
-        ('ready', 'Готов'),
-        ('served', 'Подано'),('paid', 'Оплачен'),
-        ('cancelled', 'Отменен'),
+        ('pending', 'Pending'),
+        ('preparing', 'Preparing'),
+        ('ready', 'Ready'),
+        ('served', 'Served'),('paid', 'Paid'),
+        ('cancelled', 'Cancelled'),
     ]
     
-    table = models.ForeignKey('Tables', on_delete=models.CASCADE, verbose_name='Столик')
-    employee = models.ForeignKey(Employees, on_delete=models.CASCADE, verbose_name='Сотрудник')
-    customer = models.ForeignKey(Customers, on_delete=models.CASCADE, verbose_name='Клиент')
-    order_date = models.DateTimeField('Дата заказа')
-    status = models.CharField('Статус', max_length=15, choices=STATUS_CHOICES)
-    total_amount = models.DecimalField('Общая сумма', max_digits=10, decimal_places=2, default=0)
-    notes = models.TextField('Примечания')
+    table = models.ForeignKey('Tables', on_delete=models.CASCADE, verbose_name='Table')
+    employee = models.ForeignKey(Employees, on_delete=models.CASCADE, verbose_name='Employee')
+    customer = models.ForeignKey(Customers, on_delete=models.CASCADE, verbose_name='Customer')
+    order_date = models.DateTimeField('Order date')
+    status = models.CharField('Status', max_length=15, choices=STATUS_CHOICES)
+    total_amount = models.DecimalField('Total price', max_digits=10, decimal_places=2, default=0)
+    notes = models.TextField('Notes')
     
     class Meta:
-        verbose_name = 'Заказ'
-        verbose_name_plural = 'Заказы'
+        verbose_name = 'Order'
+        verbose_name_plural = 'Orders'
         ordering = ['-order_date']
     
     def str(self):
-        return f"Заказ #{self.id}"
+        return f"Order #{self.id}"
 
 class OrderItems(models.Model):
-    order = models.ForeignKey(Orders, on_delete=models.CASCADE, related_name='order_items', verbose_name='Заказ')
-    dish = models.ForeignKey('Menu', on_delete=models.CASCADE, verbose_name='Блюдо')
-    quantity = models.IntegerField('Количество', default=1)
-    price = models.DecimalField('Цена за единицу', max_digits=8, decimal_places=2)
-    special_requests = models.TextField('Особые пожелания')
+    order = models.ForeignKey(Orders, on_delete=models.CASCADE, related_name='order_items', verbose_name='Order')
+    dish = models.ForeignKey('Menu', on_delete=models.CASCADE, verbose_name='Dish')
+    quantity = models.IntegerField('Quantity', default=1)
+    price = models.DecimalField('Price per unit', max_digits=8, decimal_places=2)
+    special_requests = models.TextField('Special request')
     
     class Meta:
-        verbose_name = 'Позиция заказа'
-        verbose_name_plural = 'Позиции заказов'
+        verbose_name = 'Order item'
+        verbose_name_plural = 'Order item'
     
     def str(self):
         return f"{self.dish.dish_name} x {self.quantity}"
 
 class Reservations(models.Model):
     STATUS_CHOICES = [
-        ('confirmed', 'Подтверждено'),
-        ('pending', 'Ожидание'),
-        ('cancelled', 'Отменено'),
-        ('completed', 'Завершено'),
+        ('confirmed', 'Confirmed'),
+        ('pending', 'Pending'),
+        ('cancelled', 'Cancelled'),
+        ('completed', 'Completed'),
     ]
     
-    customer_name = models.CharField('Имя клиента', max_length=100)
-    phone = models.CharField('Телефон', max_length=20)
-    table = models.ForeignKey('Tables', on_delete=models.CASCADE, verbose_name='Столик')
-    reservation_date = models.DateTimeField('Дата бронирования')
-    guests_count = models.IntegerField('Количество гостей')
-    status = models.CharField('Статус', max_length=15, choices=STATUS_CHOICES)
-    duration = models.IntegerField('Продолжительность (мин)', default=120)
-    notes = models.TextField('Примечания')
+    customer_name = models.CharField('Customer name', max_length=100)
+    phone = models.CharField('Phone', max_length=20)
+    table = models.ForeignKey('Tables', on_delete=models.CASCADE, verbose_name='Table')
+    reservation_date = models.DateTimeField('Reservation date')
+    guests_count = models.IntegerField('Guests count')
+    status = models.CharField('Status', max_length=15, choices=STATUS_CHOICES)
+    duration = models.IntegerField('Duration (min)', default=120)
+    notes = models.TextField('Notes')
     
     class Meta:
-        verbose_name = 'Бронирование'
-        verbose_name_plural = 'Бронирования'
+        verbose_name = 'Reservation'
+        verbose_name_plural = 'Reservations'
         ordering = ['reservation_date']
     
     def str(self):
-        return f"Бронь #{self.id}"
+        return f"Reservation #{self.id}"
 
 class Shifts(models.Model):
     employee = models.ForeignKey(Employees, on_delete=models.CASCADE, related_name='shifts', verbose_name='Сотрудник')

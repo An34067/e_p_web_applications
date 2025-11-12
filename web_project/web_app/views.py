@@ -1,8 +1,14 @@
 from django.shortcuts import render
+from .models import *
 
 # Create your views here.
 
 def home(request):
+    # fetured_dishes = Menu.objects.filter(is_available=True).order_by('?')[:3]
+    # context = {
+    #     'fetured_dishes': fetured_dishes,
+    # }
+    # return render(request, 'home.html', context)
     return render(request, 'home.html')
 
 def menu(request):
