@@ -138,18 +138,18 @@ class Reservations(models.Model):
         return f"Reservation #{self.id}"
 
 class Shifts(models.Model):
-    employee = models.ForeignKey(Employees, on_delete=models.CASCADE, related_name='shifts', verbose_name='Сотрудник')
-    shift_date = models.DateField('Дата смены')
-    start_time = models.TimeField('Время начала')
-    end_time = models.TimeField('Время окончания')
-    hours_worked = models.DecimalField('Отработано часов',max_digits=4,decimal_places=2)
-    notes = models.TextField('Заметки')
+    employee = models.ForeignKey(Employees, on_delete=models.CASCADE, related_name='shifts', verbose_name='Employee')
+    shift_date = models.DateField('Shift date')
+    start_time = models.TimeField('Start time')
+    end_time = models.TimeField('End time')
+    hours_worked = models.DecimalField('Hours worked',max_digits=4,decimal_places=2)
+    notes = models.TextField('Notes')
     
     class Meta:
-        verbose_name = 'Смена'
-        verbose_name_plural = 'Смены'
+        verbose_name = 'Shift'
+        verbose_name_plural = 'Shifts'
         ordering = ['-shift_date', 'start_time']
         unique_together = ['employee', 'shift_date']
     
     def str(self):
-        return f"Смена {self.employee}"
+        return f"Shift {self.employee}"
