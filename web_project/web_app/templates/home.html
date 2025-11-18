@@ -53,39 +53,31 @@
     <h2 class="f-title">Signature Dishes</h2>
     <p class="f-subtitle">Our chef's selection of most beloved dishes</p>
     <section class="dishes-grid">
+      {% for dish in featured_dishes %}
       <div class="dish-card">
-        <img src="{% static 'images/Truffle Infused Pasta.jpg' %}" alt="Truffle Infused Pasta"/>
+        <img src="{% static 'images/' %}{{ dish.image_name }}" alt="{{ dish.dish_name }}"/>
         <div class="dish-info">
-          <h3>Truffle Infused Pasta</h3>
-          <p>Handmade pasta with black truffle and parmesan cream sauce</p>
+          <h3>{{ dish.dish_name }}</h3>
+          <p>{{ dish.description }}</p>
           <div class="dish-footer">
-            <span>$28</span>
-            <span>Available</span>
+            <span>${{ dish.price }}</span>
+            <span>{{ dish.is_available|yesno:"Available,Unavailable" }}</span>
           </div>
         </div>
       </div>
+      {% empty %}
       <div class="dish-card">
-        <img src="{% static 'images/Wagyu Beef Steak.jpg' %}" alt="Wagyu Beef Steak"/>
+        <img src="{% static 'images/default.jpg' %}" alt="No dishes available"/>
         <div class="dish-info">
-          <h3>Wagyu Beef Steak</h3>
-          <p>Premium A5 wagyu with roasted vegetables and red wine reduction</p>
+          <h3>No Featured Dishes</h3>
+          <p>Please check back later for our special dishes</p>
           <div class="dish-footer">
-            <span>$65</span>
-            <span>Available</span>
+            <span>$0</span>
+            <span>Unavailable</span>
           </div>
         </div>
       </div>
-      <div class="dish-card">
-        <img src="{% static 'images/Chocolate Soufflé.jpg' %}" alt="Chocolate Soufflé"/>
-        <div class="dish-info">
-          <h3>Chocolate Soufflé</h3>
-          <p>Warm chocolate soufflé with vanilla bean ice cream</p>
-          <div class="dish-footer">
-            <span>$14</span>
-            <span>Available</span>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </section>
     <div class="button-container">
       <a href="{% url 'menu' %}" class="btn">View more menu</a>

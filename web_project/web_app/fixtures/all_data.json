@@ -1,0 +1,469 @@
+[
+{
+  "model": "web_app.tables",
+  "pk": 1,
+  "fields": {
+    "table_number": 1,
+    "capacity": 2,
+    "status": "free",
+    "location": "Main Dining Room - Window"
+  }
+},
+{
+  "model": "web_app.tables",
+  "pk": 2,
+  "fields": {
+    "table_number": 2,
+    "capacity": 2,
+    "status": "free",
+    "location": "Main Dining Room - Center"
+  }
+},
+{
+  "model": "web_app.tables",
+  "pk": 3,
+  "fields": {
+    "table_number": 3,
+    "capacity": 4,
+    "status": "free",
+    "location": "Main Dining Room"
+  }
+},
+{
+  "model": "web_app.tables",
+  "pk": 4,
+  "fields": {
+    "table_number": 4,
+    "capacity": 4,
+    "status": "free",
+    "location": "Main Dining Room"
+  }
+},
+{
+  "model": "web_app.tables",
+  "pk": 5,
+  "fields": {
+    "table_number": 5,
+    "capacity": 6,
+    "status": "free",
+    "location": "Private Dining"
+  }
+},
+{
+  "model": "web_app.tables",
+  "pk": 6,
+  "fields": {
+    "table_number": 6,
+    "capacity": 8,
+    "status": "free",
+    "location": "Private Dining"
+  }
+},
+{
+  "model": "web_app.tables",
+  "pk": 7,
+  "fields": {
+    "table_number": 7,
+    "capacity": 4,
+    "status": "free",
+    "location": "Outdoor Patio"
+  }
+},
+{
+  "model": "web_app.tables",
+  "pk": 8,
+  "fields": {
+    "table_number": 8,
+    "capacity": 4,
+    "status": "free",
+    "location": "Outdoor Patio"
+  }
+},
+{
+  "model": "web_app.employees",
+  "pk": 1,
+  "fields": {
+    "name": "Jean",
+    "surname": "Dupont",
+    "position": "Head Chef",
+    "salary": "75000.00",
+    "phone": "+1-555-0101",
+    "email": "jean.dupont@lesplaisirs.com",
+    "hire_date": "2018-03-15"
+  }
+},
+{
+  "model": "web_app.employees",
+  "pk": 2,
+  "fields": {
+    "name": "Marie",
+    "surname": "Laurent",
+    "position": "Sous Chef",
+    "salary": "52000.00",
+    "phone": "+1-555-0102",
+    "email": "marie.laurent@lesplaisirs.com",
+    "hire_date": "2019-07-22"
+  }
+},
+{
+  "model": "web_app.employees",
+  "pk": 3,
+  "fields": {
+    "name": "Pierre",
+    "surname": "Moreau",
+    "position": "Restaurant Manager",
+    "salary": "68000.00",
+    "phone": "+1-555-0103",
+    "email": "pierre.moreau@lesplaisirs.com",
+    "hire_date": "2015-11-10"
+  }
+},
+{
+  "model": "web_app.employees",
+  "pk": 4,
+  "fields": {
+    "name": "Sophie",
+    "surname": "Bernard",
+    "position": "Wait Staff",
+    "salary": "35000.00",
+    "phone": "+1-555-0104",
+    "email": "sophie.bernard@lesplaisirs.com",
+    "hire_date": "2021-02-28"
+  }
+},
+{
+  "model": "web_app.customers",
+  "pk": 1,
+  "fields": {
+    "phone": "+1-555-1001",
+    "full_name": "Sarah Johnson",
+    "email": "sarah.j@email.com",
+    "total_orders": 8,
+    "total_spent": "1245.50",
+    "created_at": "2023-01-15T10:30:00Z"
+  }
+},
+{
+  "model": "web_app.customers",
+  "pk": 2,
+  "fields": {
+    "phone": "+1-555-1002",
+    "full_name": "Michael Thompson",
+    "email": "michael.t@email.com",
+    "total_orders": 12,
+    "total_spent": "2450.00",
+    "created_at": "2020-06-20T14:20:00Z"
+  }
+},
+{
+  "model": "web_app.customers",
+  "pk": 3,
+  "fields": {
+    "phone": "+1-555-1003",
+    "full_name": "David Lee",
+    "email": "david.l@email.com",
+    "total_orders": 5,
+    "total_spent": "780.75",
+    "created_at": "2023-03-10T16:45:00Z"
+  }
+},
+{
+  "model": "web_app.customers",
+  "pk": 4,
+  "fields": {
+    "phone": "+1-555-1004",
+    "full_name": "John Doe",
+    "email": "john.doe@email.com",
+    "total_orders": 28,
+    "total_spent": "2450.00",
+    "created_at": "2020-06-15T09:15:00Z"
+  }
+},
+{
+  "model": "web_app.menu",
+  "pk": 1,
+  "fields": {
+    "dish_name": "Truffle Arancini",
+    "category": "Starters",
+    "price": "14.00",
+    "description": "Crispy risotto balls with black truffle and mozzarella center",
+    "cooking_time": 15,
+    "is_available": true,
+    "image_name": "Truffle Arancini.jpg"
+  }
+},
+{
+  "model": "web_app.menu",
+  "pk": 2,
+  "fields": {
+    "dish_name": "Seared Scallops",
+    "category": "Starters",
+    "price": "32.00",
+    "description": "Perfectly seared scallops with cauliflower purée and pancetta crisp",
+    "cooking_time": 20,
+    "is_available": true,
+    "image_name": "Seared Scallops.jpg"
+  }
+},
+{
+  "model": "web_app.menu",
+  "pk": 3,
+  "fields": {
+    "dish_name": "Crème Brûlée",
+    "category": "Desserts",
+    "price": "12.00",
+    "description": "Classic vanilla bean custard with caramelized sugar crust",
+    "cooking_time": 10,
+    "is_available": true,
+    "image_name": "Crème Brûlée.jpg"
+  }
+},
+{
+  "model": "web_app.menu",
+  "pk": 4,
+  "fields": {
+    "dish_name": "Burrata Salad",
+    "category": "Starters",
+    "price": "16.00",
+    "description": "Creamy burrata with heirloom tomatoes, basil and balsamic glaze",
+    "cooking_time": 10,
+    "is_available": true,
+    "image_name": "Burrata Salad.jpg"
+  }
+},
+{
+  "model": "web_app.menu",
+  "pk": 5,
+  "fields": {
+    "dish_name": "Duck Confit",
+    "category": "Mains",
+    "price": "38.00",
+    "description": "Tender duck leg with cherry reduction, roasted potatoes and seasonal vegetables",
+    "cooking_time": 25,
+    "is_available": true,
+    "image_name": "Duck Confit.jpg"
+  }
+},
+{
+  "model": "web_app.menu",
+  "pk": 6,
+  "fields": {
+    "dish_name": "Signature Cocktail",
+    "category": "Drinks",
+    "price": "14.00",
+    "description": "Gin, elderflower liqueur, fresh lime juice and cucumber",
+    "cooking_time": 5,
+    "is_available": true,
+    "image_name": "Signature Cocktail.jpg"
+  }
+},
+{
+  "model": "web_app.menu",
+  "pk": 7,
+  "fields": {
+    "dish_name": "Truffle Infused Pasta",
+    "category": "Mains",
+    "price": "28.00",
+    "description": "Handmade pasta with black truffle and parmesan cream sauce",
+    "cooking_time": 18,
+    "is_available": true,
+    "image_name": "Truffle Infused Pasta.jpg"
+  }
+},
+{
+  "model": "web_app.menu",
+  "pk": 8,
+  "fields": {
+    "dish_name": "Wagyu Beef Steak",
+    "category": "Mains",
+    "price": "65.00",
+    "description": "Premium A5 wagyu with roasted vegetables and red wine reduction",
+    "cooking_time": 22,
+    "is_available": true,
+    "image_name": "Wagyu Beef Steak.jpg"
+  }
+},
+{
+  "model": "web_app.menu",
+  "pk": 9,
+  "fields": {
+    "dish_name": "Chocolate Soufflé",
+    "category": "Desserts",
+    "price": "14.00",
+    "description": "Warm chocolate soufflé with vanilla bean ice cream",
+    "cooking_time": 12,
+    "is_available": true,
+    "image_name": "Chocolate Soufflé.jpg"
+  }
+},
+{
+  "model": "web_app.shifts",
+  "pk": 1,
+  "fields": {
+    "employee": 1,
+    "shift_date": "2024-01-15",
+    "start_time": "14:00:00",
+    "end_time": "22:00:00",
+    "hours_worked": "8.00",
+    "notes": "Evening shift"
+  }
+},
+{
+  "model": "web_app.shifts",
+  "pk": 2,
+  "fields": {
+    "employee": 2,
+    "shift_date": "2024-01-15",
+    "start_time": "10:00:00",
+    "end_time": "18:00:00",
+    "hours_worked": "8.00",
+    "notes": "Day shift"
+  }
+},
+{
+  "model": "web_app.shifts",
+  "pk": 3,
+  "fields": {
+    "employee": 4,
+    "shift_date": "2024-01-15",
+    "start_time": "16:00:00",
+    "end_time": "00:00:00",
+    "hours_worked": "8.00",
+    "notes": "Evening service"
+  }
+},
+{
+  "model": "web_app.reservations",
+  "pk": 1,
+  "fields": {
+    "customer_name": "Sarah Johnson",
+    "phone": "+1-555-1001",
+    "table": 3,
+    "reservation_date": "2024-01-20T19:00:00Z",
+    "guests_count": 4,
+    "status": "confirmed",
+    "duration": 120,
+    "notes": "Anniversary celebration"
+  }
+},
+{
+  "model": "web_app.reservations",
+  "pk": 2,
+  "fields": {
+    "customer_name": "Michael Thompson",
+    "phone": "+1-555-1002",
+    "table": 5,
+    "reservation_date": "2024-01-18T20:00:00Z",
+    "guests_count": 6,
+    "status": "confirmed",
+    "duration": 120,
+    "notes": "Business dinner"
+  }
+},
+{
+  "model": "web_app.reservations",
+  "pk": 3,
+  "fields": {
+    "customer_name": "David Lee",
+    "phone": "+1-555-1003",
+    "table": 7,
+    "reservation_date": "2024-01-22T18:30:00Z",
+    "guests_count": 4,
+    "status": "pending",
+    "duration": 120,
+    "notes": "Outdoor seating requested"
+  }
+},
+{
+  "model": "web_app.orders",
+  "pk": 1,
+  "fields": {
+    "table": 3,
+    "employee": 4,
+    "customer": 1,
+    "order_date": "2024-01-15T19:30:00Z",
+    "status": "paid",
+    "total_amount": "142.00",
+    "notes": "Table 3 - Evening service"
+  }
+},
+{
+  "model": "web_app.orders",
+  "pk": 2,
+  "fields": {
+    "table": 5,
+    "employee": 4,
+    "customer": 2,
+    "order_date": "2024-01-15T20:15:00Z",
+    "status": "served",
+    "total_amount": "228.50",
+    "notes": "Private dining - Business meeting"
+  }
+},
+{
+  "model": "web_app.orderitems",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "dish": 1,
+    "quantity": 2,
+    "price": "14.00",
+    "special_requests": "No modifications"
+  }
+},
+{
+  "model": "web_app.orderitems",
+  "pk": 2,
+  "fields": {
+    "order": 1,
+    "dish": 7,
+    "quantity": 2,
+    "price": "28.00",
+    "special_requests": "Extra truffle"
+  }
+},
+{
+  "model": "web_app.orderitems",
+  "pk": 3,
+  "fields": {
+    "order": 1,
+    "dish": 9,
+    "quantity": 2,
+    "price": "14.00",
+    "special_requests": "One with vanilla ice cream, one without"
+  }
+},
+{
+  "model": "web_app.orderitems",
+  "pk": 4,
+  "fields": {
+    "order": 2,
+    "dish": 8,
+    "quantity": 2,
+    "price": "65.00",
+    "special_requests": "Medium rare"
+  }
+},
+{
+  "model": "web_app.orderitems",
+  "pk": 5,
+  "fields": {
+    "order": 2,
+    "dish": 5,
+    "quantity": 1,
+    "price": "38.00",
+    "special_requests": "No cherry reduction"
+  }
+},
+{
+  "model": "web_app.orderitems",
+  "pk": 6,
+  "fields": {
+    "order": 2,
+    "dish": 6,
+    "quantity": 3,
+    "price": "14.00",
+    "special_requests": "One with extra lime"
+  }
+}
+]

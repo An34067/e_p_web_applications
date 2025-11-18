@@ -15,8 +15,16 @@
               <img src="{% static 'images/profile-img.jpg' %}" alt="profile-img"/>
             </div>
             <div class="second-column">
-              <h2 class="name">John Doe</h2>
-              <p class="status">Gold Member</p>
+              <h2 class="name">{{ customer.full_name|default:"John Doe" }}</h2>
+              <p class="status">
+                {% if customer.total_spent >= 2000 %}
+                Gold Member
+                {% elif customer.total_spent >= 1000 %}
+                Silver Member
+                {% else %}
+                Bronze Member
+                {% endif %}
+              </p>
             </div>
         </div>
         <div class="nav">
@@ -121,7 +129,15 @@
     </div>
     <div class="membership-card">
         <div class="header-card">
-            <h3>Gold Membership</h3>
+            <h3>
+                {% if customer.total_spent >= 2000 %}
+                Gold Membership
+                {% elif customer.total_spent >= 1000 %}
+                Silver Membership
+                {% else %}
+                Bronze Membership
+                {% endif %}
+            </h3>
             <p class="member-since">Since 2020</p>
             <p>Enjoy 10% off all orders</p>
             <p>Priority reservations</p>
@@ -130,15 +146,15 @@
         <div class="minfo">
             <div class="info-item">
                 <p>Total Spent</p>
-                <p>$2,450.00</p>
+                <p>${{ customer.total_spent|default:"2,450.00" }}</p>
             </div>
             <div class="info-item">
                 <p>Visits</p>
-                <p>28</p>
+                <p>{{ customer.total_orders|default:"28" }}</p>
             </div>
             <div class="info-item">
                 <p>Member Since</p>
-                <p>Jun 2020</p>
+                <p>{{ customer.created_at|date:"M Y"|default:"Jun 2020" }}</p>
             </div>
         </div>
     </div>

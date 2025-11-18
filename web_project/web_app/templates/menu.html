@@ -10,7 +10,7 @@
 {% block content %}
 <section class="menu-section">
   <div class="menu-content">
-    <h1> Our Menu</h1>
+    <h1>Our Menu</h1>
     <p>Explore our culinary creations crafted with passion and finest ingredients</p>
     <button class="menu-btn">All</button>
     <button class="menu-btn">Starters</button>
@@ -19,90 +19,29 @@
     <button class="menu-btn">Drinks</button>
   </div>
 </section>
+
 <section class="menu_grid">
+  {% for dish in dishes %}
   <div class="dish_card">
-    <img src="{% static 'images/Truffle Arancini.jpg' %}" alt="Truffle Arancini"/>
+    <img src="{% static 'images/' %}{{ dish.image_name }}" alt="{{ dish.dish_name }}"/>
     <div class="dish_info">
       <div class="dish_header">
-          <h3>Truffle Arancini</h3>
-          <span class="price">$14</span>
+          <h3>{{ dish.dish_name }}</h3>
+          <span class="price">${{ dish.price }}</span>
       </div>
-      <p>Crispy risotto balls with black truffle and mozzarella center</p>
+      <p>{{ dish.description }}</p>
       <div class="dish_footer">
-        <span class="time">🕒 15 min</span>
-        <span class="status">Available</span>
+        <span class="time">🕒 {{ dish.cooking_time }} min</span>
+        <span class="status {% if dish.is_available %}available{% else %}unavailable{% endif %}">
+          {{ dish.is_available|yesno:"Available,Unavailable" }}
+        </span>
       </div>
     </div>
   </div>
-  <div class="dish_card">
-    <img src="{% static 'images/Seared Scallops.jpg' %}" alt="Seared Scallops"/>
-    <div class="dish_info">
-      <div class="dish_header">
-          <h3>Seared Scallops</h3>
-          <span class="price">$32</span>
-      </div>
-      <p>Perfectly seared scallops with cauliflower purée and pancetta crisp</p>
-      <div class="dish_footer">
-        <span class="time">🕒 20 min</span>
-        <span class="status">Available</span>
-      </div>
-    </div>
+  {% empty %}
+  <div class="no-dishes">
+    <p>No dishes available at the moment. Please check back later.</p>
   </div>
-  <div class="dish_card">
-    <img src="{% static 'images/Crème Brûlée.jpg' %}" alt="Crème Brûlée"/>
-    <div class="dish_info">
-      <div class="dish_header">
-          <h3>Crème Brûlée</h3>
-          <span class="price">$12</span>
-      </div>
-      <p>Classic vanilla bean custard with caramelized sugar crust</p>
-      <div class="dish_footer">
-        <span class="time">🕒 10 min</span>
-        <span class="status">Available</span>
-      </div>
-    </div>
-  </div>
-  <div class="dish_card">
-    <img src="{% static 'images/Burrata Salad.jpg' %}" alt="Burrata Salad"/>
-    <div class="dish_info">
-      <div class="dish_header">
-          <h3>Burrata Salad</h3>
-          <span class="price">$16</span>
-      </div>
-      <p>Creamy burrata with heirloom tomatoes, basil and balsamic glaze</p>
-      <div class="dish_footer">
-        <span class="time">🕒 10 min</span>
-        <span class="status">Available</span>
-      </div>
-    </div>
-  </div>
-  <div class="dish_card">
-    <img src="{% static 'images/Duck Confit.jpg' %}" alt="Duck Confit"/>
-    <div class="dish_info">
-      <div class="dish_header">
-          <h3>Duck Confit</h3>
-          <span class="price">$38</span>
-      </div>
-      <p>Tender duck leg with cherry reduction, roasted potatoes and seasonal vegetables</p>
-      <div class="dish_footer">
-        <span class="time">🕒 25 min</span>
-        <span class="status">Available</span>
-      </div>
-    </div>
-  </div>
-  <div class="dish_card">
-    <img src="{% static 'images/Signature Cocktail.jpg' %}" alt="Signature Cocktail"/>
-    <div class="dish_info">
-      <div class="dish_header">
-          <h3>Signature Cocktail</h3>
-          <span class="price">$14</span>
-      </div>
-      <p>Gin, elderflower liqueur, fresh lime juice and cucumber</p>
-      <div class="dish_footer">
-        <span class="time">🕒 5 min</span>
-        <span class="status">Available</span>
-      </div>
-    </div>
-  </div>
+  {% endfor %}
 </section>
 {% endblock %}

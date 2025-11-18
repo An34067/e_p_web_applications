@@ -26,13 +26,14 @@ class Menu(models.Model):
     description = models.TextField('Description')
     cooking_time = models.IntegerField('Cooking time (min)', default=15)
     is_available = models.BooleanField('Available', default=True)
+    image_name = models.CharField('Image filename', max_length=100, default='default.jpg')
     
     class Meta:
         verbose_name = 'Dish'
         verbose_name_plural = 'Menu'
         ordering = ['category', 'dish_name']
     
-    def str(self):
+    def __str__(self):
         return self.dish_name
 
 
@@ -54,7 +55,7 @@ class Tables(models.Model):
         verbose_name_plural = 'Tables'
         ordering = ['table_number']
     
-    def str(self):
+    def __str__(self):
         return f"Table #{self.table_number}"
 
 class Customers(models.Model):
@@ -70,7 +71,7 @@ class Customers(models.Model):
         verbose_name_plural = 'Customers'
         ordering = ['-created_at']
     
-    def str(self):
+    def __str__(self):
         return self.full_name or self.phone
 
 class Orders(models.Model):
@@ -95,7 +96,7 @@ class Orders(models.Model):
         verbose_name_plural = 'Orders'
         ordering = ['-order_date']
     
-    def str(self):
+    def __str__(self):
         return f"Order #{self.id}"
 
 class OrderItems(models.Model):
@@ -109,7 +110,7 @@ class OrderItems(models.Model):
         verbose_name = 'Order item'
         verbose_name_plural = 'Order item'
     
-    def str(self):
+    def __str__(self):
         return f"{self.dish.dish_name} x {self.quantity}"
 
 class Reservations(models.Model):
@@ -134,7 +135,7 @@ class Reservations(models.Model):
         verbose_name_plural = 'Reservations'
         ordering = ['reservation_date']
     
-    def str(self):
+    def __str__(self):
         return f"Reservation #{self.id}"
 
 class Shifts(models.Model):
@@ -151,5 +152,5 @@ class Shifts(models.Model):
         ordering = ['-shift_date', 'start_time']
         unique_together = ['employee', 'shift_date']
     
-    def str(self):
+    def __str__(self):
         return f"Shift {self.employee}"
