@@ -16,6 +16,14 @@
                 <a href="{% url 'reservation' %}">Reservation</a>
             </li>
         </ul>
+        <div class="search-container">
+            <form method="GET" action="{% url 'menu' %}" class="search-form">
+                <input type="text" name="q" placeholder="Search dishes..." class="search-input" value="{{ request.GET.q }}">
+                <button type="submit" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
         <div class="nav-buttons">
             <a href="{% url 'signin' %}"><button class="signin-btn">Sign In</button></a>
             <a href="{% url 'reservation' %}"><button class="book-btn">Book a table</button></a>

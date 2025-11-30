@@ -8,12 +8,21 @@ def home(request):
     return render(request, 'home.html', {'featured_dishes': featured_dishes})
 
 def menu(request):
+    search = request.GET.get('q', '') 
     dishes = Menu.objects.filter(is_available=True)
-    return render(request, 'menu.html', {'dishes': dishes})
+    
+    if search:
+        dishes = dishes.filter(dish_name__icontains=search)
+    
+    return render(request, 'menu.html', {
+        'dishes': dishes,
+        'search': search 
+    })
 
 def reservation(request):
     available_tables = Tables.objects.filter(status='free')
     return render(request, 'reservation.html', {'available_tables': available_tables})
+
 
 def signin(request):
     return render(request, 'signin.html')

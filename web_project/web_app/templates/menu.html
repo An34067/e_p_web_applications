@@ -1,17 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block title %}Les Plaisirs Secrets - Menu{% endblock %}
-
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'menu.css' %}">
 {% endblock %}
-
 {% block content %}
 <section class="menu-section">
   <div class="menu-content">
     <h1>Our Menu</h1>
     <p>Explore our culinary creations crafted with passion and finest ingredients</p>
+    {% if search %}
+    <div class="search-info">
+        <p>Search: <strong>"{{ search }}"</strong></p>
+        <p>Found: {{ dishes.count }} dishes</p>
+        <a href="{% url 'menu' %}" class="show-all-btn">Show all</a>
+    </div>
+    {% endif %}
     <button class="menu-btn">All</button>
     <button class="menu-btn">Starters</button>
     <button class="menu-btn">Mains</button>
@@ -19,7 +23,6 @@
     <button class="menu-btn">Drinks</button>
   </div>
 </section>
-
 <section class="menu_grid">
   {% for dish in dishes %}
   <div class="dish_card">
@@ -40,7 +43,15 @@
   </div>
   {% empty %}
   <div class="no-dishes">
-    <p>No dishes available at the moment. Please check back later.</p>
+    {% if search %}
+      <div class="no-results">
+        <h3>No dishes found</h3>
+        <p>Try another search</p>
+        <a href="{% url 'menu' %}" class="show-all-btn">Show all dishes</a>
+      </div>
+    {% else %}
+      <p>No dishes available at the moment.</p>
+    {% endif %}
   </div>
   {% endfor %}
 </section>
