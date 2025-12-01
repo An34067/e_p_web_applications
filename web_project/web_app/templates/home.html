@@ -1,6 +1,9 @@
 {% extends 'base.html' %} 
 {% load static %}
 {% block title %}Les Plaisirs Secrets - Home{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'menu.css' %}">
+{% endblock %}
 {% block content %}
 <section class="hero-section">
   <div class="hero-content">
@@ -52,36 +55,34 @@
   <div class="f-content">
     <h2 class="f-title">Signature Dishes</h2>
     <p class="f-subtitle">Our chef's selection of most beloved dishes</p>
-    <section class="dishes-grid">
-      {% for dish in featured_dishes %}
-      <div class="dish-card">
-        <img src="{% static 'images/' %}{{ dish.image_name }}" alt="{{ dish.dish_name }}"/>
-        <div class="dish-info">
-          <h3>{{ dish.dish_name }}</h3>
-          <p>{{ dish.description }}</p>
-          <div class="dish-footer">
-            <span>${{ dish.price }}</span>
-            <span>{{ dish.is_available|yesno:"Available,Unavailable" }}</span>
+    {% if featured_dishes %}
+      <section class="menu_grid">  
+        {% for dish in featured_dishes %}
+        <div class="dish_card">    
+          <img src="{% static 'images/' %}{{ dish.image_name }}" alt="{{ dish.dish_name }}"/>
+          <div class="dish_info">   
+            <div class="dish_header">
+                <h3>{{ dish.dish_name }}</h3>
+                <span class="price">${{ dish.price }}</span>
+            </div>
+            <p>{{ dish.description }}</p>
+            <div class="dish_footer">
+              <span class="time">🕒 {{ dish.cooking_time|default:"25" }} min</span>
+              <span class="status {% if dish.is_available %}available{% else %}unavailable{% endif %}">
+                {{ dish.is_available|yesno:"Available,Unavailable" }}
+              </span>
+            </div>
           </div>
         </div>
+        {% endfor %}
+      </section>
+    {% else %}
+      <div class="no-dishes">
+        <p>No featured dishes available at the moment.</p>
       </div>
-      {% empty %}
-      <div class="dish-card">
-        <img src="{% static 'images/default.jpg' %}" alt="No dishes available"/>
-        <div class="dish-info">
-          <h3>No Featured Dishes</h3>
-          <p>Please check back later for our special dishes</p>
-          <div class="dish-footer">
-            <span>$0</span>
-            <span>Unavailable</span>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </section>
+    {% endif %}
     <div class="button-container">
       <a href="{% url 'menu' %}" class="btn">View more menu</a>
-    </div>
     </div>
   </div>
 </section>

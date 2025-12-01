@@ -154,42 +154,90 @@ body {
     font-weight: bold;
     margin-bottom: 1rem;
 }
-.f-subtitles {
-    color: #000;
-    font-size: 0.5rem;
+.f-subtitle { 
+    color: #666;
+    font-size: 1rem;
     text-align: center;
+    margin-bottom: 2rem;
 }
-.dishes-grid {
+.menu_grid {
     display: grid;
-    grid-template-columns: 300px 300px 300px;
+    grid-template-columns: 380px 380px 380px;
     gap: 40px;
     margin-bottom: 3rem;
     padding: 1rem;
     justify-content: center;
 }
-.dish-card {
-    width: 300px;
+.dish_card {
+    width: 380px;
     background: white;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
-.dish-card:hover {
+.dish_card:hover {
     transform: scale(1.05);
 }
-.dish-card img {
-    width: 300px;
+.dish_card img {
+    width: 100%;
     height: 200px;
     object-fit: cover;
 }
-.dish-info {
+.dish_info {
     padding: 1rem;
 }
-.dish-footer {
+.dish_info p {
+    color: gray;
+    font-size: 14px;
+    margin: 10px 0;
+    line-height: 1.4;
+}
+.dish_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.dish_header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #000;
+}
+.price {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.dish_footer {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
+    align-items: center;
+}
+.dish_footer .time {
+    color: gray;
+    font-size: 14px;
+}
+.dish_footer .status {
+    padding: 6px 16px;
+    border: none;
+    color: #1e5631;
+    background-color: #d7f7e3;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.dish_footer .status.unavailable {
+    color: #7a1c1c;
+    background-color: #f7d7d7;
+}
+.no-dishes {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 18px;
+    grid-column: 1 / -1;
 }
 .button-container {
     display: flex;
@@ -205,15 +253,16 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
     transition: background-color 0.3s ease;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    font-weight: 500;
 }
 .btn:hover {
-    background-color: rgb(200, 100, 18);
+    background-color: rgb(180, 120, 10);
 }
 .review-section {
     margin-top: 5rem;
@@ -223,7 +272,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 3rem 0;
+    padding-bottom: 3rem;
     width: 100vw;
 }
 .r-content {
@@ -236,15 +285,16 @@ body {
     font-weight: bold;
     margin-bottom: 1rem;
 }
-.r-subtitles {
-    color: #000;
-    font-size: 0.5rem;
+.r-subtitle { 
+    color: #666;
+    font-size: 1rem;
     text-align: center;
+    margin-bottom: 2rem;
 }
 .review-grid {
     display: grid;
-    grid-template-columns: 300px 300px 300px;
-    gap: 70px;
+    grid-template-columns: 350px 350px 350px;
+    gap: 40px;
     margin-bottom: 3rem;
     padding: 1rem;
     justify-content: center;
@@ -264,59 +314,68 @@ body {
     padding: 1rem;
 }
 .stars {
-    color: yellow;
+    color: #ffd700;
     text-align: left;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 0 1.5rem;
+    margin-bottom: 1rem;
+}
+.stars i {
+    margin-right: 3px;
 }
 .r_text {
   text-align: left;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding: 0 1.5rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 .second-column {
-    display: grid;
-    grid-template-rows: 25px 25px;
-    align-items: center;
-    justify-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 .review-footer {
-    display: grid;
-    grid-template-columns: 100px 100px;
-    grid-template-rows: auto;
+    display: flex;
     align-items: center;
+    gap: 15px;
+    padding: 0 1.5rem;
 }   
 .review-card img {
-    border-radius: 100%;
+    border-radius: 50%;
     width: 55px;
     height: 55px;
     object-fit: cover;
 }
 .r_author {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
-    color: black;
+    color: #000;
+    margin: 0 0 5px 0;
 }
 .author_post {
     font-size: 0.9rem;
-    color: black;
+    color: #777;
+    margin: 0;
 }
 .reserve-section {
     margin-top: 5rem;
     position: relative;
     background-size: cover;
     background-position: center;
-    background-color: rgb(200, 100, 18);
+    background-color: rgb(212, 144, 18);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 3rem;
+    padding: 3rem 0;
     width: 100vw;
 }
 .reserve-content {
     position: relative;
     text-align: center;
     color: white;
+    max-width: 800px;
+    padding: 0 20px;
 }
 .reserve-title {
     font-size: 2rem;
@@ -327,19 +386,25 @@ body {
     color: white;
     font-size: 1.2rem;
     text-align: center;
+    margin-bottom: 2rem;
 }
 .reserve-btn {
-    width: 200px;
-    height: 50px;
-    color: rgb(200, 100, 18);
+    width: 220px;
+    height: 55px;
+    color: rgb(212, 144, 18);
     background-color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 .reserve-btn:hover {
-    background-color: rgb(163, 163, 163);
-    color: white;
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.dishes-grid, .dish-card, .dish-info, .dish-footer {
+    display: none;
 }
