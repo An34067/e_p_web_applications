@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Les Plaisirs Secrets - {{ dish.dish_name }}{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'dish_details.css' %}">
+{% endblock %}
+{% block content %}
+<section class="dish-detail-section">
+    <div class="dish-detail-container">
+        <a href="{% url 'menu' %}" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Menu
+        </a>
+        <div class="dish-detail-card">
+            <div class="dish-image-container">
+                <img src="{% static 'images/' %}{{ dish.image_name }}" alt="{{ dish.dish_name }}" class="dish-image">
+            </div>
+            <div class="dish-info">
+                <div class="dish-header">
+                    <h1>{{ dish.dish_name }}</h1>
+                    <div class="dish-price">${{ dish.price }}</div>
+                    <span class="dish-category">{{ dish.category }}</span>
+                </div>
+                <p class="dish-description">{{ dish.description }}</p>
+                <div class="dish-details">
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Cooking time: <strong>{{ dish.cooking_time }} minutes</strong></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-tag"></i>
+                        <span>Category: <strong>{{ dish.category }}</strong></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Status: 
+                            <strong>
+                                {% if dish.is_available %}
+                                    Available
+                                {% else %}
+                                    Unavailable
+                                {% endif %}
+                            </strong>
+                        </span>
+                    </div>
+                </div>
+                <div class="availability">
+                    <span class="status-badge {% if dish.is_available %}available{% else %}unavailable{% endif %}">
+                        {{ dish.is_available|yesno:"Available,Unavailable" }}
+                    </span>
+                </div>
+                {% if dish.is_available %}
+                <a href="{% url 'reservation' %}" class="order-button">
+                    <i class="fas fa-shopping-cart"></i> Reserve Table & Order
+                    </a>
+                {% else %}
+                <button class="order-button" disabled style="background-color: #ccc; cursor: not-allowed;">
+                    <i class="fas fa-clock"></i> Currently Unavailable
+                </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

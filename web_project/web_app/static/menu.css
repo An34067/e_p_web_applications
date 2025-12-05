@@ -31,6 +31,7 @@ p{
     border-radius: 25px;
     border: none;
     background-color: white;
+    text-decoration: none;
 }
 .menu-btn:hover{
     background-color: rgb(236, 236, 236);
@@ -42,6 +43,10 @@ p{
     margin-bottom: 3rem;
     padding: 1rem;
     justify-content: center;
+}
+.dish_details{
+    text-decoration: none; 
+    color: inherit;
 }
 .dish_card {
     width: 380px;
